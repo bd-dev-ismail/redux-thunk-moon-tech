@@ -1,0 +1,4 @@
+//karri function
+const cartCounter = () => ()=> ()=> {
+
+}
