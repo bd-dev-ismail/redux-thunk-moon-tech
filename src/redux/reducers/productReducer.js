@@ -1,7 +1,8 @@
 import {
   ADD_PRODUCT,
   ADD_TO_CART,
-  PRODUCT_LOADED,
+  LOAD_PRODUCT,
+ 
   REMOVE_FROM_CART,
   REMOVE_PRODUCT,
 } from "../actionTypes/actionTypes";
@@ -17,6 +18,11 @@ const productReducer = (state = initialState, action) => {
   );
 
   switch (action.type) {
+    case LOAD_PRODUCT:
+      return {
+        ...state,
+        products: action.payload,
+      };
     case ADD_PRODUCT:
       return {
         ...state,
@@ -65,11 +71,7 @@ const productReducer = (state = initialState, action) => {
         ),
       };
 
-    case PRODUCT_LOADED:
-      return {
-        ...state,
-        products: action.payload,
-      };
+  
     default:
       return state;
   }
